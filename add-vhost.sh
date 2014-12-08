@@ -5,7 +5,7 @@ USER=${HOST//./-}
 HTTPD=/etc/httpd/conf.d
 BASE=/home
 WWW="$BASE/$USER/www"
-useradd $USER
+useradd -s /sbin/nologin $USER
 passwd $USER
 chown apache:$USER $BASE/$USER
 chmod ug=rx,g+w,o-rw $BASE/$USER
