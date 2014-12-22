@@ -22,6 +22,8 @@ cat << EOF > $HTTPD/$USER.conf
 	ErrorLog $WWW/logs/error.log
 	CustomLog $WWW/logs/access.log combined
 	AssignUserID $USER $USER
+	php_admin_value sys_temp_dir $WWW/tmp
+    	php_admin_value session.save_path $WWW/tmp
     <Directory $WWW/html>
         Require all granted
 		AllowOverride  All
