@@ -10,7 +10,7 @@ passwd $USER
 chown apache:$USER $BASE/$USER
 chmod ug=rx,g+w,o-rw $BASE/$USER
 
-mkdir -p $WWW/{html,cgi,logs}
+mkdir -p $WWW/{html,cgi,logs,tmp}
 chown $USER:$USER $WWW -R
 chmod u=rwx $WWW -R
 
