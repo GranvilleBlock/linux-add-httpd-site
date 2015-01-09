@@ -5,6 +5,7 @@ USER=${HOST//./-}
 
 HTML="/home/$USER/www/html"
 
-chown $USER:$USER $HTML
-chmod -R u=rw,go=r $HTML
-chmod -R a+X $HTML
+chown $USER:$USER $HTML -R
+chmod 600 $HTML -R; chmod u+X $HTML -R
+#chmod -R u=rw,go=r $HTML
+#chmod -R a+X $HTML
