@@ -13,7 +13,7 @@ chmod ug=rx,g+w,o-rw $BASE/$USER
 mkdir -p $WWW/{html,cgi,logs,tmp}
 chown $USER:$USER $WWW -R
 #chmod u=rwx $WWW -R
-chmod 600 $HTML -R; chmod u+X $HTML -R
+chmod 600 $WWW/html -R; chmod u+X $WWW/html -R
 
 cat << EOF > $HTTPD/$USER.conf
 <VirtualHost *:80>
