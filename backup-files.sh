@@ -25,7 +25,6 @@ echo "[----------][`date +%F--%H-%M`] Run the backup script..."
 
 TIMESTAMP="%Y-%m-%d-%H-%M-%S"
 BACKUP_PATH="/mnt/backup.yd"
-#BACKUP_PATH="/root/backups"
 HTTPD_CONF_PATH="/etc/httpd"
 
 #Parameters check
