@@ -8,13 +8,21 @@
 #   2. Backup type: required, must be in "local|remote". "remote" will mount and umount backup path.
 #   3. Backup path: non-required. Must be without trailing slash "/".
 #   4. Date and time stamp format: non-required. Example "%Y-%m-%d-%H-%M-%S".
+#
+# crontab examlpe
+# 55 2 * * * rm /var/cache/davfs2/webdav.yandex.ru+mnt-backup.yd+root/*
+# 0 3 2-31 * 1-6 /root/tools/backup-mysql.sh daily remote /mnt/backup.yd >> /var/log/backup/mysql.log
+# 0 4 2-31 * 1-6 /root/tools/backup-files.sh daily remote /mnt/backup.yd >> /var/log/backup/files.log
+# 20 3 * * 0 [ "$(date +\%d)" -ne "01" ] && /root/tools/backup-mysql.sh weekly remote /mnt/backup.yd >> /var/log/backup/mysql.log
+# 20 4 * * 7 [ "$(date +\%d)" -ne "01" ] && /root/tools/backup-files.sh weekly remote /mnt/backup.yd >> /var/log/backup/files.log
+# 40 3 1 * * /root/tools/backup-mysql.sh monthly remote /mnt/backup.yd >> /var/log/backup/mysql.log
+# 40 4 1 * * /root/tools/backup-files.sh monthly remote /mnt/backup.yd >> /var/log/backup/files.log
+
 #####################################################################################################
 
 echo "[--------------------------------[`date +%F--%H-%M`]--------------------------------]" 
 echo "[----------][`date +%F--%H-%M`] Run the backup script..."
-# Variables
-USER="backup"
-PASS="NJc5r6uTbS"
+
 TIMESTAMP="%Y-%m-%d-%H-%M-%S"
 BACKUP_PATH="/mnt/backup.yd"
 #BACKUP_PATH="/root/backups"
