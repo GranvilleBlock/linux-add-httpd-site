@@ -8,3 +8,5 @@ Bash scripts set to help organise and backup web server.
 3. Backup MySQL. Script to store and rotate sites MySQL db backups to file system.
 4. Restore permissions. Set correct permissions to site user's home dir.
 5. Change Wordpress site domain in db.
+
+[end]
